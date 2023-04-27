@@ -60,7 +60,6 @@ function collision(head,array){
 }
 
 // draw everything to the canvas
-
 function draw(){
     
     ctx.drawImage(ground,0,0);
@@ -114,5 +113,4 @@ function draw(){
 }
 
 // call draw function every 100 ms
-
 let game = setInterval(draw,100);

@@ -16,24 +16,24 @@ function updatePos() {
         snakeX = snakeX + box
         currentState = 2
       }
-      else if (pressL(e) && pressR(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressUp(e) && pressDown(e)) {
-        currentState = 3
-      }
+    //   else if (pressL(e) && pressR(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressUp(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
       else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
         snakeX = snakeX - box
         snakeY = snakeY
@@ -56,24 +56,24 @@ function updatePos() {
         snakeX = snakeX + box
         currentState = 2
       }
-      else if (pressL(e) && pressR(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressUp(e) && pressDown(e)) {
-        currentState = 3
-      }
+    //   else if (pressL(e) && pressR(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressUp(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
       else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
         snakeX = snakeX - box
         snakeY = snakeY
@@ -96,24 +96,24 @@ function updatePos() {
         snakeX = snakeX + box
         currentState = 2
       }
-      else if (pressL(e) && pressR(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressUp(e) && pressDown(e)) {
-        currentState = 3
-      }
+    //   else if (pressL(e) && pressR(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressUp(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
       else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
         snakeX = snakeX - box
         snakeY = snakeY
@@ -136,24 +136,24 @@ function updatePos() {
         snakeX = snakeX + box
         currentState = 2
       }
-      else if (pressL(e) && pressR(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressL(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressUp(e)) {
-        currentState = 3
-      }
-      else if (pressR(e) && pressDown(e)) {
-        currentState = 3
-      }
-      else if (pressUp(e) && pressDown(e)) {
-        currentState = 3
-      }
+    //   else if (pressL(e) && pressR(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressL(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressUp(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressR(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
+    //   else if (pressUp(e) && pressDown(e)) {
+    //     currentState = 3
+    //   }
       else if (!pressR(e) && !pressUp(e) && !pressDown(e)) {
         snakeX = snakeX - box
         snakeY = snakeY
