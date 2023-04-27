@@ -32,7 +32,6 @@ left.src = "audio/left.mp3";
 down.src = "audio/down.mp3";
 
 // create the snake
-
 let snake = [];
 
 snake[0] = {
@@ -41,7 +40,6 @@ snake[0] = {
 };
 
 // create the food
-
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
     y : Math.floor(Math.random()*15+3) * box
@@ -81,6 +79,7 @@ function draw(){
     snakeX = snake[0].x;
     snakeY = snake[0].y;
   
+    //synthesized system goes here
     updatePos();
     
     // if the snake eats the food
@@ -117,166 +116,3 @@ function draw(){
 // call draw function every 100 ms
 
 let game = setInterval(draw,100);
-
-function updatePos() {
-  if (currentState === 0) {
-    if (!pressL(e) && !pressR(e) && !pressUp(e)) {
-      snakeX = snakeX
-      snakeY = snakeY + box
-      currentState = 0
-    }
-    else if (!pressL(e) && !pressR(e) && pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY - box
-      currentState = 1
-    }
-    else if (!pressL(e) && pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeY = snakeY
-      snakeX = snakeX + box
-      currentState = 2
-    }
-    else if (pressL(e) && pressR(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressUp(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX - box
-      snakeY = snakeY
-      currentState = 3
-    }
-  }
-  else if (currentState === 1) {
-    if (!pressL(e) && !pressR(e) && !pressUp(e) && pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY + box
-      currentState = 0
-    }
-    else if (!pressL(e) && !pressR(e) && !pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY - box
-      currentState = 1
-    }
-    else if (!pressL(e) && pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeY = snakeY
-      snakeX = snakeX + box
-      currentState = 2
-    }
-    else if (pressL(e) && pressR(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressUp(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX - box
-      snakeY = snakeY
-      currentState = 3
-    }
-  }
-  else if (currentState === 2) {
-    if (!pressL(e) && !pressR(e) && !pressUp(e) && pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY + box
-      currentState = 0
-    }
-    else if (!pressL(e) && !pressR(e) && pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY - box
-      currentState = 1
-    }
-    else if (!pressL(e) && !pressUp(e) && !pressDown(e)) {
-      snakeY = snakeY
-      snakeX = snakeX + box
-      currentState = 2
-    }
-    else if (pressL(e) && pressR(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressUp(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && !pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX - box
-      snakeY = snakeY
-      currentState = 3
-    }
-  }
-  else if (currentState === 3) {
-    if (!pressL(e) && !pressR(e) && !pressUp(e) && pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY + box
-      currentState = 0
-    }
-    else if (!pressL(e) && !pressR(e) && pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX
-      snakeY = snakeY - box
-      currentState = 1
-    }
-    else if (!pressL(e) && pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeY = snakeY
-      snakeX = snakeX + box
-      currentState = 2
-    }
-    else if (pressL(e) && pressR(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressL(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressUp(e)) {
-      currentState = 3
-    }
-    else if (pressR(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (pressUp(e) && pressDown(e)) {
-      currentState = 3
-    }
-    else if (!pressR(e) && !pressUp(e) && !pressDown(e)) {
-      snakeX = snakeX - box
-      snakeY = snakeY
-      currentState = 3
-    }
-  }
-}

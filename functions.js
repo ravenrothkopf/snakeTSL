@@ -25,7 +25,7 @@ function pressDown(e){
     }
 }
 
-//collision functions
+//other collision functions
 function isWall(){ return (snakeX < box || 
     snakeX > 17 * box || snakeY > 17*box || snakeY < 3*box)}
 
