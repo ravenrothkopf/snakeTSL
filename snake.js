@@ -2,7 +2,15 @@ const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
 let snakeX;
 let snakeY;
-let newHead;
+let newHead = {
+  x : 0,
+  y : 0
+};
+
+const die = "die";
+const idle = "idle";
+const eat = "eat";
+
 let currentState = 0;
 // create the unit
 const box = 32;
@@ -18,14 +26,14 @@ foodImg.src = "img/food.png";
 // load audio files
 
 let dead = new Audio();
-let eat = new Audio();
+let eatfood = new Audio();
 let up = new Audio();
 let right = new Audio();
 let left = new Audio();
 let down = new Audio();
 
 dead.src = "audio/dead.mp3";
-eat.src = "audio/eat.mp3";
+eatfood.src = "audio/eat.mp3";
 up.src = "audio/up.mp3";
 right.src = "audio/right.mp3";
 left.src = "audio/left.mp3";
@@ -50,7 +58,7 @@ let score = 0;
 let command = "";
 
 // cheack collision function
-function collision(head,array){
+function collision(head, array){
     for(let i = 0; i < array.length; i++){
         if(head.x == array[i].x && head.y == array[i].y){
             return true;
@@ -77,39 +85,64 @@ function draw(){
     // old head position
     snakeX = snake[0].x;
     snakeY = snake[0].y;
-  
-    //synthesized system goes here
-    updatePos();
-    
-    // if the snake eats the food
-    if(snakeX == food.x && snakeY == food.y){
-        score++;
-        eat.play();
-        food.x = Math.floor(Math.random()*17+1) * box,
-        food.y = Math.floor(Math.random()*15+3) * box
-        // we don't remove the tail
-    }else{
-        // remove the tail
-        snake.pop();
+
+    let newHead = {
+      x : 0,
+      y : 0
+    }
+
+
+    // //synthesized system goes here
+    // updatePos(newHead);
+    // updateCollision(newHead);
+    updateBoth();
+    newHead.x = snakeX
+    newHead.y = snakeY
+
+    if (command == "eat"){
+      // eatfood.play();
+      console.log("eat");
+      food.x = Math.floor(Math.random()*17+1) * box,
+      food.y = Math.floor(Math.random()*15+3) * box
+    }
+    else if (command == "idle"){
+      snake.pop();
+    }
+    else if (command == "die"){
+      clearInterval(game);
+      console.log("die");
+      // dead.play();
     }
     
-    //add new Head
-    newHead = {
-      x : snakeX,
-      y : snakeY
-    }
+    // // if the snake eats the food
+    // if(snakeX == food.x && snakeY == food.y){
+    //     score++;
+    //     eat.play();
+    //     food.x = Math.floor(Math.random()*17+1) * box,
+    //     food.y = Math.floor(Math.random()*15+3) * box
+    //     // we don't remove the tail
+    // }else{
+    //     // remove the tail
+    //     snake.pop();
+    // }
     
-    //game over
-    if(isWall() || collision(newHead,snake)){
-        clearInterval(game);
-        dead.play();
-    }
+    // //add new Head
+    // newHead = {
+    //   x : snakeX,
+    //   y : snakeY
+    // }
     
+    // //game over
+    // if(isWall() || collision(newHead,snake)){
+    //     clearInterval(game);
+    //     dead.play();
+    // }
     snake.unshift(newHead);
     
     ctx.fillStyle = "white";
     ctx.font = "45px Changa one";
     ctx.fillText(score,2*box,1.6*box);
+    console.log("end loop")
 }
 
 // call draw function every 100 ms

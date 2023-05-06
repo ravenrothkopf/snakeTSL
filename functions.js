@@ -29,4 +29,4 @@ function pressDown(e){
 function isWall(){ return (snakeX < box || 
     snakeX > 17 * box || snakeY > 17*box || snakeY < 3*box)}
 
-function eatFood(){ snakeX == food.x && snakeY == food.y }
+function eatFood(){ return (snakeX == food.x && snakeY == food.y) }
