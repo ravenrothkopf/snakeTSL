@@ -4,15 +4,14 @@ The Snake Game created with TSL, JavaScript, and HTML5.
 
 ## Project Overview and Game Rules
 For this project, I sought to create a game governed by a system generated using program synthesis rather than manual programming. 
-The Snake is a game where the player controls a snake that moves around the screen, trying to collect apples.
+**Snake** is a game where the player controls a snake that moves around the screen through arrow key presses. The goal of the game is to collect the apples that appear on the screen without dying.
 
 The rules of the game are simple:
 1. If the snake hits itself, the game ends.
 2. If the snake hits a wall, the game ends.
 3. If the snake hits an apple, both the snake's length and the player's score increase by 1.
 
-Temporal Stream Logic (**TSL**) is a high-level, logical specification language used to synthesize reactive systems. With TSL, you can specify how a program will behave/react **over discrete time** and then generate a concrete code implementation that realizes that specification.
-Game development and reactive synthesis are well suited because 
+In program synthesis, Temporal Stream Logic (**TSL**) is a high-level, logical specification language used to synthesize reactive systems. With TSL, you can specify how a program will behave/react over **discrete time** and then generate a concrete code implementation that realizes that specification. One reason why game development is a well suited domain for reactive program synthesis because games almost always require inputs from some environment (mouse clicks, key presses, screen taps, etc.), and must respond to those inputs/interactions (collect the token, move the character, increment the score, etc.). 
 
 ## Reactive System Architecture 
 The first step in TSL spec development is to figure out the inputs, outputs, and cells of your system.
@@ -77,13 +76,16 @@ always guarantee {
 ~~~
 
 ## Code Integration
-After writing a TSL specification, the next step is integrating the synthesized code from that specification into your desired domain. I started with code for a JavaScript Snake Game from an online tutorial[^1], and then refactored it so that function terms and predicates fit with those from my specifcations. I kept the boilerplate code for rendering snake, the apple, and the score count on the canvas. I also kept the function for adding a unit to the end of the snake based on the <code>tailLength</code> variable. I split up the rest of the code into 3 files:
+After writing a TSL specification, the next step is integrating the synthesized code from that specification into your desired domain. I started with code for a JavaScript Snake game from an online tutorial[^1], and then refactored it so that function terms and predicates fit with those from my specifcations. I kept the boilerplate code for rendering snake, the apple, and the score count on the canvas. I also kept the function for adding a unit to the end of the snake based on the <code>tailLength</code> variable. I split up the rest of the code into 3 files:
 ~~~
 ├── index.js
 ├── functions.js
 ├── system.js
 ~~~
 
-<code>index.js</code> contains most of the boilerplate for rendering the game, and the top-level <code>draw</code> function that is called 7 times a second. One call of this function represents one timestep for the reactive systems. <code>draw</code> calls the functions for drawing the snake, apple and score on the screen, along with the <code>updateSnake()</code> and <code>updateCollision()</code> functions which are located in <code>system.js</code>. These functions contain the code from the synthesized TSL specifications. <code>functions.js</code> has all of the  predicates that are used in the TSL specifications like </code>pressLeft(e)</code>, and <code>eatFood()</code>. 
+<code>index.js</code> contains most of the boilerplate for rendering the game, and the top-level <code>draw</code> function that is called 7 times a second. One call of this function represents one timestep for the reactive systems. <code>draw</code> calls the functions for drawing the snake, apple and score on the screen, along with the <code>updateSnake()</code> and <code>updateCollision()</code> functions which are located in <code>system.js</code>. These functions contain the code from the synthesized TSL specifications. <code>functions.js</code> has all of the  predicates that are used in the TSL specifications like <code>pressLeft(e)</code>, and <code>eatFood()</code>. 
+
+## Final Result
+The final result of this project is a Snake game that looks like a normal Snake game lol. The fun part were incorporating the underlying program synthesis techniques to develop the game. My specifications are pretty basic, but they are a good foundation for future specification engineering that deals with more complex interactions and snake behaviors over time. Also, I'm sure there's a way to unite the two systems for position and collision handling, I just haven't had the time to figure it out!
 
 [^1]: https://github.com/Kamau-ke/How-to-buid-snake-game-with-javaScript/tree/main/snake%20game
