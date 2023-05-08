@@ -1,3 +1,5 @@
+//source code taken from https://github.com/Kamau-ke/How-to-buid-snake-game-with-javaScript/tree/main/snake%20game
+
 const canvas=document.getElementById('game');
 const ctx=canvas.getContext('2d');
 
@@ -73,4 +75,22 @@ function clearScreen(){
      ctx.fillRect(appleX*tileCount, appleY*tileCount, tileSize, tileSize)
  }
 
- drawGame(); 
+function restart(){
+    clearScreen();
+    speed=7;
+    snake.length = 0;
+
+    currentState = 0;
+    currentState1 = 0;
+    command = "idle"
+
+    headX=10;
+    headY=10;
+    tailLength=2;
+
+    appleX=5;
+    appleY=5;
+    score=0;
+    drawGame();
+}
+//  drawGame(); 
