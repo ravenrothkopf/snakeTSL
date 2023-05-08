@@ -1,15 +1,25 @@
-<html>
-    <head>
-        <title>Snake Game</title>
-        <style>
-            canvas{
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-    </head>
-    <canvas id="snake" width="608" height="608"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The TSL Snake Game</title>
+   <style>
+       body{
+           margin: 0px;
+           padding: 0px;
+           display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+       }
+   </style>
+</head>
+<body>
+    <canvas id="game" width="400" height="400"/>
     <script src="functions.js"></script>
     <script src="system.js"></script>
-    <script src="snake.js"></script>
+    <script src="index.js"></script>
+</body>
 </html>
