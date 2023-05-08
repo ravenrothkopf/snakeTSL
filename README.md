@@ -1,6 +1,8 @@
 # Temporal Snake Logic (TSL) - Program Synthesis Seminar 2023
 
-The Snake Game created with TSL, JavaScript, and HTML5.
+a Snake game created with TSL, JavaScript, and HTML5.
+
+[Play a demo here!](https://ravenrothkopf.github.io/snakeTSL/)
 
 ## Project Overview and Game Rules
 For this project, I sought to create a game governed by a system generated using program synthesis rather than manual programming. 
@@ -86,6 +88,6 @@ After writing a TSL specification, the next step is integrating the synthesized 
 <code>index.js</code> contains most of the boilerplate for rendering the game, and the top-level <code>draw</code> function that is called 7 times a second. One call of this function represents one timestep for the reactive systems. <code>draw</code> calls the functions for drawing the snake, apple and score on the screen, along with the <code>updateSnake()</code> and <code>updateCollision()</code> functions which are located in <code>system.js</code>. These functions contain the code from the synthesized TSL specifications. <code>functions.js</code> has all of the  predicates that are used in the TSL specifications like <code>pressLeft(e)</code>, and <code>eatFood()</code>. 
 
 ## Final Result
-The final result of this project is a Snake game that looks like a normal Snake game lol. The fun part were incorporating the underlying program synthesis techniques to develop the game. My specifications are pretty basic, but they are a good foundation for future specification engineering that deals with more complex interactions and snake behaviors over time. Also, I'm sure there's a way to unite the two systems for position and collision handling, I just haven't had the time to figure it out!
+The final result of this project is a [Snake](https://ravenrothkopf.github.io/snakeTSL/) game that looks like a normal Snake game lol. The fun part was incorporating the underlying program synthesis techniques into the game development process. My specifications are pretty basic, but they are a good foundation for future specification engineering that deals with more complex interactions and snake behaviors over time. Also, I'm sure there's a way to unite the two systems for position and collision handling, I just haven't had the time to figure it out!
 
 [^1]: https://github.com/Kamau-ke/How-to-buid-snake-game-with-javaScript/tree/main/snake%20game
