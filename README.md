@@ -57,6 +57,7 @@ always guarantee {
     pressDown(e) -> (([ headY <- headY + 1] && [headX <- headX]) W (pressR(e) || pressL(e) || pressUp(e))); 
 }
 ~~~
+This specification synthesizes a 4-state automaton. The 4 states are for the 4 different arrow key inputs.
 
 ### Snake Collisions Specification
 ~~~js
@@ -76,7 +77,7 @@ always guarantee {
   ! (eatFood || hitSelf || hitWall) -> ([score <- score] && [tailLength <- tailLength] && [appleX <- appleX] && [appleY <- appleY] && [command <- idle]);
 }
 ~~~
-
+This specification synthesizes an automaton with 1 state. Not ideal, there is definitely a way to make the spec more interesting!
 ## Code Integration
 After writing a TSL specification, the next step is integrating the synthesized code from that specification into your desired domain. I started with code for a JavaScript Snake game from an online tutorial[^1], and then refactored it so that function terms and predicates fit with those from my specifcations. I kept the boilerplate code for rendering snake, the apple, and the score count on the canvas. I also kept the function for adding a unit to the end of the snake based on the <code>tailLength</code> variable. I split up the rest of the code into 3 files:
 ~~~
